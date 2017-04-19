@@ -2,9 +2,8 @@ var io = require('socket.io').listen(8082);
 var reveal_socket_id;
 var control_socket_id;
 
-io.configure( function() {
-io.set('close timeout', 60*60*24); // 24h time out
-});
+
+var robot = require("robotjs");
 
 io.sockets.on('connection', function (socket) {
   
@@ -21,21 +20,13 @@ io.sockets.on('connection', function (socket) {
   });
   
   socket.on('prev', function (data) {
-    if(reveal_socket_id != null){
-		  io.sockets.socket(reveal_socket_id).emit('reveal_prev');	
+		robot.keyTap("left");
 		  console.log('reveal prev');
-    }else{
-		  console.error('reveal is not connected yet');
-    }
   });
 
   socket.on('next', function (data) {
-    if(reveal_socket_id != null){
-		  io.sockets.socket(reveal_socket_id).emit('reveal_next');	
+		robot.keyTap("right");
 		  console.log('reveal next');
-    }else{
-		  console.error('reveal is not connected yet');
-    }
   });
 });
 var client = require('socket.io-client');
@@ -55,4 +46,4 @@ s.use(function(req, res){
 		res.end('Next');
 	}
   });
-s.listen(8080);
+s.listen(8089);
