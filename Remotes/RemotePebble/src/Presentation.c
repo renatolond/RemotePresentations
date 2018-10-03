@@ -35,7 +35,10 @@ void update_time() {
         return;
     }
   
-    snprintf(big_time, 10, "%02d:%02d:%02d", hours, minutes, seconds);
+    int ret = snprintf(big_time, 10, "%02d:%02d:%02d", hours, minutes, seconds);
+    if (ret < 0) {
+         abort();
+    }
 
     text_layer_set_text(text_layer, big_time);
 }

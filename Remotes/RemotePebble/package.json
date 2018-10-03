@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "author": "Sergio Araki",
+  "private": true,
+  "dependencies": {},
+  "keywords": [
+    "pebble-app"
+  ],
+  "pebble": {
+    "sdkVersion": "3",
+    "resources": {
+      "media": [
+        {
+          "menuIcon": true,
+          "type": "png",
+          "name": "Remote",
+          "file": "img/icon.png"
+        },
+        {
+          "type": "png",
+          "name": "NEXT_ICON",
+          "file": "img/next.png"
+        },
+        {
+          "type": "png",
+          "name": "PREV_ICON",
+          "file": "img/prev.png"
+        },
+        {
+          "type": "png",
+          "name": "TIMER_ICON",
+          "file": "img/clock.png"
+        }
+      ]
+    },
+    "projectType": "native",
+    "uuid": "0b5936bd-8549-4c70-883f-ee14f1e00693",
+    "messageKeys": {
+      "dir": 0
+    },
+    "enableMultiJS": false,
+    "displayName": "Presentation",
+    "watchapp": {
+      "onlyShownOnCommunication": false,
+      "hiddenApp": false,
+      "watchface": false
+    },
+    "targetPlatforms": [
+      "aplite",
+      "basalt",
+      "chalk"
+    ],
+    "capabilities": [
+      "configurable"
+    ]
+  },
+  "name": "Presentation"
+}

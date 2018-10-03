@@ -1,8 +1,8 @@
-var ipServer = localStorage.getItem("ar.com.sergioaraki.remote.ip");
+var ipServer = localStorage.getItem("br.com.lond.remote.ip");
 if (!ipServer) {
   ipServer = '192.168.1.100';
 }
-var portServer = localStorage.getItem("ar.com.sergioaraki.remote.port");
+var portServer = localStorage.getItem("br.com.lond.remote.port");
 if (!portServer) {
   portServer = '8080';
 }
@@ -54,7 +54,7 @@ function sendNext() {
 }
 
 Pebble.addEventListener("showConfiguration", function() {
-  Pebble.openURL('http://www.arakisergio.com.ar/RemoteConfig/config.html');
+  Pebble.openURL('http://lond.com.br/RemoteConfig/config.html');
 });
 
 Pebble.addEventListener("webviewclosed", function(e) {
@@ -63,6 +63,6 @@ Pebble.addEventListener("webviewclosed", function(e) {
   var options = JSON.parse(decodeURIComponent(e.response));
   ipServer = options.ip;
   portServer = options.port;
-  localStorage.setItem("ar.com.sergioaraki.remote.ip", ipServer);
-  localStorage.setItem("ar.com.sergioaraki.remote.port", portServer);
+  localStorage.setItem("br.com.lond.remote.ip", ipServer);
+  localStorage.setItem("br.com.lond.remote.port", portServer);
 });
